@@ -1,0 +1,114 @@
+body {
+    background-color: aliceblue;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid-container {
+    width: 80%;
+    height: auto; /* Allow height to adjust based on content */
+    margin: 20px auto; /* Adjust margin for better mobile view */
+    display: grid;
+    grid-template-rows: auto auto; /* Automatically adjust row height */
+    grid-template-columns: repeat(4, 1fr); /* Default layout for larger screens */
+    grid-gap: 25px; /* Space between items */
+}
+
+.grid-container > div {
+    border-radius: 10px;
+    padding: 30px;
+    word-wrap: break-word;
+}
+
+/* Individual Grid Items */
+.item1 {
+    background-color: #733fc8;
+    grid-column: 1 / 3; /* Spans two columns */
+    grid-row: 1;
+    color: white;
+}
+
+.item2 {
+    background-color: #49556b;
+    grid-column: 3 / 4; /* Single column on large screens */
+    grid-row: 1;
+    color: white;
+}
+
+.item3 {
+    background-color: white;
+    grid-column: 4; /* Single column on large screens */
+    grid-row: 1 / 3; /* Spans two rows */
+    box-shadow: 2px 2px 5px rgb(195, 190, 190);
+}
+
+.item4 {
+    background-color: white;
+    grid-column: 1; /* Single column on large screens */
+    grid-row: 2;
+    box-shadow: 2px 2px 5px rgb(195, 190, 190);
+}
+
+.item5 {
+    background-color: #18202d;
+    grid-column: 2 / 4; /* Spans two columns on large screens */
+    grid-row: 2;
+    color: white;
+}
+
+/* Typography */
+h3, h4 {
+    margin: 0;
+    font-weight: 100;
+}
+
+h4 {
+    opacity: 0.5;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: normal;
+    margin: 15px 0;
+}
+
+p {
+    font-weight: lighter;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+section {
+    margin-left: 15px;
+    font-weight: lighter;
+}
+
+/* Profile Image Styling */
+img {
+    border-radius: 50%;
+    border: 2px solid black;
+    width: 30px;
+    height: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Single-column layout */
+        grid-template-rows: auto; /* Auto-adjust row heights */
+        gap: 20px;
+    }
+
+    .item1, .item2, .item3, .item4, .item5 {
+        grid-column: 1 / 2; /* Each item occupies the full row */
+        grid-row: auto; /* Auto-adjust rows */
+    }
+}
